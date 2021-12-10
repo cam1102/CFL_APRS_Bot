@@ -12,6 +12,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 slack_token = os.environ['SLACK_BOT_TOKEN']
+threeword_token = os.environ['3WORDS_TOKEN']
 client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])
 
 def SlackPost(post,team_channel):
@@ -69,7 +70,7 @@ with open(os.path.join('echo_log', csv_echo), 'w') as e:
 ser2 = serial.Serial('/dev/tty.usbmodem14401', 9600, timeout=1) #open kenwood serial port
 print("Connecting to Radio...")
 
-geocoder = what3words.Geocoder("DGOT5E5N")
+geocoder = what3words.Geocoder("3WORDS_TOKEN")
 
 
 Callsigns = {'Alpha': 'KE8PTU-11', 'Bravo': 'KF6RFX-12', 'Charlie': 'KE8PTV-11', 'Delta': 'KF6RFX-14', 'Echo': 'KF6RFX-15'}
